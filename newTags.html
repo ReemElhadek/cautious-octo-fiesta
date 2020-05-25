@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #mainContainer{
+            border:1px solid black;
+            padding:5px;
+            margin: 20px auto;
+            width: 800px;
+        }
+        nav{
+            /* display: flex;
+            justify-content: center;
+            align-items: center; */
+            background: beige;
+        }
+        /* ul{
+            display: flex;
+            justify-content: space-evenly;
+
+        } */
+        ul{
+            text-align: center;
+        }
+        li{
+            display: inline-block;
+            margin:10px 50px;
+            list-style: none;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        li:hover{
+            cursor: pointer;
+
+        }
+        li:active{
+            color: navy;    
+        }
+        header,footer{
+            text-align: center;
+            background-color: black;
+            color: white;
+            font-size:30px;
+            font-family: tahoma;
+            padding: 10px;
+        }
+        #content{
+            border:1px solid black;
+            padding: 5px;
+            overflow: hidden;
+            
+        }
+        #content>section{
+            width: 60%;
+            float: left;
+        }
+        #content>aside{
+            float:right;
+        }
+        footer{
+            font-size:18px;
+        }
+        p{
+            padding: 5px;
+        }
+
+        p:nth-child(even)
+        {
+            background-color: blue;
+            color: yellow;
+        }
+        p:nth-child(odd)
+        {
+            background-color: yellow;;
+            color: blue;
+        }
+
+        #content>section>article:nth-child(1){
+            border: 1px solid black;
+            columns: 2;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div id="mainContainer">
+        <nav>
+            <ul>
+                <li>
+                    Home
+                </li>
+                <li>
+                    Profile
+                </li>
+                <li>
+                    Downloads
+                </li>
+                <li>
+                    Contact
+                </li>
+            </ul>
+        </nav>
+        <header>
+            HTML5 Demo
+        </header>
+        <section id="content">
+            <section>
+                <article>
+                    Diam voluptua et sit clita rebum, accusam nonumy amet et dolor no no sit labore, sit elitr lorem takimata sed lorem, diam vero magna sit sit duo sit gubergren, magna gubergren aliquyam takimata justo, sed voluptua eirmod sit elitr no stet gubergren et et. Lorem sadipscing stet ut aliquyam sed.
+                </article>
+                <article>
+                    <img src="coco/1.jpg" />
+                    <img src="coco/3.jpg"/>
+                </article>
+            </section>
+            <aside>
+                <p>ITI SmartVillage </p>
+                <p>ITI NasrCity </p>
+                <p>ITI Alex </p>
+                <p>ITI Mansoura </p>
+                <p>ITI Assiut </p>
+                <p>ITI Ismailia </p>
+            </aside>
+        </section>
+        <footer>
+            &copy; PSU 2019
+        </footer>
+    </div>
+</body>
+</html>

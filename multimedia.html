@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Multimedia</title>
+    <script>
+        window.addEventListener('load',function(){
+            //controls
+            var playBtn = document.querySelector('input[value="|>"]');
+            var pauseBtn = document.querySelector('input[value="||"]');
+            var stopBtn = document.querySelector('input[value="[]"]');
+            var fullScreenBtn = document.querySelector('input[value="[--]"]');
+            var seekBar = document.querySelector('input[type="range"]');
+            //
+            var video = document.querySelector('video');
+            //Events
+            playBtn.addEventListener('click',function(){
+                video.play();
+            })
+            pauseBtn.addEventListener('click',function(){
+                video.pause();
+            })
+            stopBtn.addEventListener('click',function(){
+                video.pause();
+                video.currentTime = 0;
+            })
+            fullScreenBtn.addEventListener('click',function(){
+                video.webkitEnterFullScreen();
+            });
+            seekBar.addEventListener('change',function(){
+                console.log(seekBar.value);
+                video.currentTime = (seekBar.value / 100) * video.duration
+            })
+            video.addEventListener('timeupdate',function(){
+                seekBar.value = (video.currentTime / video.duration)*100;
+            })
+            
+        });
+    </script>
+    <style>
+        #mainContainer{
+            margin: 100px auto;
+            width: 800px;
+            padding: 10px;
+            background-color: beige;
+            box-shadow: 5px 5px 5px grey;
+        }
+        h2{
+            text-align: center;
+            font-family: tahoma;
+            text-decoration: underline;
+        }
+
+        video,#controls{
+            width: 90%;
+            margin: auto;
+            display: block;
+        }
+
+        #controls{
+            margin-top:20px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        input[type=range]{
+            width: 50%;
+        }
+
+        input[type=button]{
+            border-radius:50%;
+            width: 50px;
+            height: 50px;
+            border: none;
+            padding: 10px;
+            color: white;
+            background: black;
+            font-weight: bold;
+            outline: none;
+            transition-duration: 0.25;
+        }
+        input[type=button]:active{
+            transform: scale(1.1);
+        }
+
+    
+        
+    </style>
+</head>
+
+<body>
+    <section id="mainContainer">
+        <h2>Video player</h2>
+
+        <video src="resources/video.webm">
+
+        </video>
+        <section id="controls">
+            <div>
+                    <input type="button" value="|>" />
+                    <input type="button" value="||" />
+                    <input type="button" value="[]" />
+                    <input type="button" value="[--]" />
+            </div>
+            <input type="range"  max=100  value="0">
+        </section>
+    </section>
+</body>
+
+</html>
